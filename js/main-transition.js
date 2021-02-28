@@ -308,7 +308,7 @@ function animateUp() {
   });
   setTimeout(() => {
     document.body.classList.remove('anime')
-  }, 2000)
+  }, 1500)
   currentSection.classList.remove('top-section');
   if (!currentSection.nextElementSibling) {
     document.querySelector('.main').children[0].classList.add('top-section');
@@ -369,7 +369,7 @@ function animateDown() {
   });
   setTimeout(() => {
     document.body.classList.remove('anime')
-  }, 2000)
+  }, 1500)
   currentSection.classList.remove('top-section');
   if (!currentSection.previousElementSibling) {
     document.querySelector('.main').children[0].classList.add('top-section');
@@ -394,7 +394,7 @@ function animateDown() {
 
       } else if (child.classList.contains('white-wrapper')) {
         document.body.classList.remove('black')
-        document.body.classList.add('black')
+        document.body.classList.add('white')
       }
     }
   });
