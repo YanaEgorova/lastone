@@ -1,9 +1,9 @@
 import {
   findCurrentPage
 } from "./main-transition.js";
-import {
-  setHeight
-} from "./main-transition.js";
+// import {
+//   setHeight
+// } from "./main-transition.js";
 import {
   setActiveNavLink
 } from "./main-transition.js";
@@ -280,7 +280,7 @@ function animateUpByLinks(currentSection) {
     }
   });
   findCurrentPage()
-  setHeight()
+  // setHeight()
   setActiveNavLink();
 }
 
@@ -331,7 +331,7 @@ function animateDownByLinks(currentSection) {
     }
   });
   findCurrentPage()
-  setHeight()
+  // setHeight()
   setActiveNavLink();
 }
 

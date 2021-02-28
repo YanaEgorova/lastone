@@ -203,10 +203,10 @@ if (animationDownBtn) {
 window.addEventListener('resize', onResize)
 
 
-export function setHeight() {
-  sectionsWrap.style.height = `${document.querySelector('.top-section .section-content').offsetHeight}px`;
-  document.body.style.height = `${document.querySelector('.top-section .section-content').offsetHeight}px`;
-}
+// export function setHeight() {
+//   sectionsWrap.style.height = `${document.querySelector('.top-section .section-content').offsetHeight}px`;
+//   document.body.style.height = `${document.querySelector('.top-section .section-content').offsetHeight}px`;
+// }
 
 
 function downloadBtnAnimation(e) {
@@ -284,7 +284,7 @@ export function setActiveNavLink() {
     nextActiveLink.classList.add('menu__link-current');
   }
 }
-setHeight();
+// setHeight();
 setActiveNavLink()
 
 
@@ -313,14 +313,14 @@ function animateUp() {
   if (!currentSection.nextElementSibling) {
     document.querySelector('.main').children[0].classList.add('top-section');
     findCurrentPage()
-    setHeight()
+    // setHeight()
     setActiveNavLink();
 
     return
   }
   currentSection.nextElementSibling.classList.add('top-section');
   findCurrentPage()
-  setHeight()
+  // setHeight()
   setActiveNavLink();
   // }, 1000)
   currentSection = findCurrentPage();
@@ -374,13 +374,13 @@ function animateDown() {
   if (!currentSection.previousElementSibling) {
     document.querySelector('.main').children[0].classList.add('top-section');
     findCurrentPage()
-    setHeight()
+    // setHeight()
     setActiveNavLink();
     return
   }
   currentSection.previousElementSibling.classList.add('top-section');
   findCurrentPage()
-  setHeight()
+  // setHeight()
   setActiveNavLink();
   // }, 1000)
   currentSection = findCurrentPage();
@@ -426,7 +426,7 @@ function throttle(func, ms) {
 }
 
 function onResize() {
-  setHeight()
+  // setHeight()
 }
 onResize = throttle(onResize, 150);
 
