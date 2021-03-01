@@ -404,7 +404,7 @@ function animateDown() {
 }
 
 
-function throttle(func, ms) {
+export function throttle(func, ms) {
   let isThrottled = false;
   let savedArgs;
   let savedThis;
