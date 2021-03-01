@@ -46,7 +46,7 @@ function goToTheProject(e) {
         project.classList.remove('current-project')
       }
       if (project.dataset.projectid === projectId) {
-        console.log('set class');
+        // console.log('set class');
         project.classList.add('current-project')
       }
     })
@@ -291,6 +291,9 @@ setActiveNavLink()
 function animateUp() {
   document.body.classList.add('anime')
   let currentSection = findCurrentPage();
+  // console.log(currentSection.querySelector('.sub-content').offsetHeight);
+  // console.dir(currentSection);
+  // console.log(`HERE:     -${findCurrentPage().offsetHeight * 2}px`);
   anime({
     targets: currentSection,
     translateY: {
@@ -326,7 +329,7 @@ function animateUp() {
   currentSection = findCurrentPage();
   Object.values(currentSection.children).forEach(child => {
     if (child.classList.contains('section-content')) {
-      console.log('HEEERE: ', child);
+      // console.log('HEEERE: ', child);
       if (child.classList.contains('black-wrapper')) {
         // console.log(3333);
         document.body.classList.remove('white')
@@ -426,16 +429,21 @@ function throttle(func, ms) {
 }
 
 function onResize() {
-  // setHeight()
+  if (document.querySelector('.top-section').previousElementSibling && document.querySelector('.top-section').previousElementSibling.hasAttribute('style')) {
+    const section = document.querySelector('.top-section').previousElementSibling;
+    const sectionHeight = window.getComputedStyle(section).getPropertyValue("height");
+    console.log('PREV HEIGHT', sectionHeight);
+    section.style.transform = `translateY(-${sectionHeight})`;
+  }
 }
-onResize = throttle(onResize, 150);
+onResize = throttle(onResize, 1000);
 
 
 
 // ========================================================
 
 function hello(e, IsIntersecting) {
-  console.log(111111);
+  // console.log(111111);
   if (e.direction === 'up' && IsIntersecting && !body.classList.contains('menu-active') && body.classList.contains('preloader-inactive') && !body.classList.contains('form-modal-active') && !body.classList.contains('project-active') && !body.classList.contains('anime')) {
     console.log('down');
     animateDown()
@@ -463,7 +471,7 @@ var indicator = new WheelIndicator({
 indicator.getOption('preventMouse');
 
 function hello2(e, IsIntersecting2) {
-  console.log(99999999);
+  // console.log(99999999);
   if (e && e.direction === 'down' && IsIntersecting2 && !body.classList.contains('menu-active') && body.classList.contains('preloader-inactive') && !body.classList.contains('form-modal-active') && !body.classList.contains('project-active') && !body.classList.contains('anime')) {
     console.log('up');
     animateUp()
@@ -544,7 +552,7 @@ let animationObserver
 let animationObserverBottom
 
 function handleTouchMove(evt) {
-  console.log(99999);
+  // console.log(99999);
   // if (!xDown || !yDown) {
   //   return;
   // }
